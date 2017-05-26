@@ -1,13 +1,15 @@
 import React from 'react'
+import Note from './Note'
 
-function NoteLister({notes}) {
-	
-	console.log(notes)
-	
+function NoteLister(props) {
+
+	const notesDisplay = props.notes.map((note, i) => <li><Note body={note} key={i}/></li> )
 	return(
-		<div className="note-container">
-			<h1>{notes.title}</h1>
-			<h1>{notes.notes}</h1>
+		<div className="col-xs-12 note-container">
+			<h1>{props.title}</h1>
+			<ul>
+			{notesDisplay}
+			</ul>
 		</div>
 	)
 	

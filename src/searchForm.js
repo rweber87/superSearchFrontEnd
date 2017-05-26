@@ -7,7 +7,7 @@ class SearchForm extends React.Component {
 
 		this.state = {
 			title: '',
-			notes: ''
+			notes: []
 		}
 		this.handleChange = this.handleChange.bind(this)
 	}
@@ -35,9 +35,6 @@ class SearchForm extends React.Component {
 			    		<br/>
 			    		<label>Title</label>
 				    	<input name="title" className="form-control" placeholder="Enter Title" onChange={this.handleChange}/>
-				    	<br/>
-				    	<label>Enter Note</label>
-				    	<textarea name="notes" className="form-control" placeholder="Enter Note Here" onChange={this.handleChange}></textarea>
 				    	<br/>
 				    	<button value='Submit'>Submit</button>
 			    	</div>
