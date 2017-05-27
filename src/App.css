@@ -1,14 +1,69 @@
-.form {
-    padding-bottom: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: gray;
-    box-shadow: 5px 5px 5px ;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* Note Lister Styling*/
+.noteList-container{
+  height:700px;
+  width:400px;
+  float: right;
+  margin-right:20px;
+  margin-top:5px;
+  background-color:#fafafa;
+  border-radius:20px;
+  box-shadow: 5px 5px 5px #888888;
 }
-
-.note-container {
-    position: right;
-    padding-left: 40px;
-    margin-left: 40px;
-    
+.noteList-header{
+  width:400px;
+  height:60px;
+  margin-top:-20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color:#34495e;
+}
+.noteList-title-wrapper{
+  margin-left:20px;
+}
+.notes-container{
+  margin-left:20px;
+  padding-top:20px;
+  height:460px;
+  position: relative;
+  list-style-type: none;
+}
+.note{
+  width:360px;
+  padding-bottom:20px;
+  padding-top:20px;
+  padding-left:20px;
+  margin-bottom:10px;
+}
+#note-title{
+  float:left;
+  padding-top:2px;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+#note-count{
+  width:22px;
+  height:22px;
+  background-color:#2ecc71;
+  font-family: 'Roboto', sans-serif;
+  border-radius:50%;
+  margin-top:20px;
+  margin-right:20px;
+  float:right;
+  text-align: center;
+  vertical-align: middle;
+}
+.noteForm-container{
+  width:400px;
+  float:right;
+}
+#noteForm-input{
+  text-align: top;
+  width:360px;
+  margin-left:20px;
+  height:150px;
+  padding-top:0px;
+  border-radius: 2px;
+  border:none;
+  box-shadow: 2px 2px 2px 0px #888888;
 }
