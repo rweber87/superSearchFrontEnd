@@ -1,66 +1,57 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import SearchForm from './searchForm'
 import NavBar from './NavBar'
-import NoteLister from './noteLister'
-import Note from './Note'
-import NoteForm from './NoteForm'
-import { getYoutubeVideos, getWikiSummary, getFlickrPhotos }  from './api'
+import NoteLister from './notes/NoteLister'
+import PhotoLister from './photos/PhotoLister'
+import VideoLister from './videos/VideoLister'
+import WikiLister from './WikiLister'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-
 
 class App extends Component {
 
   constructor(){
     super()
      this.state = {
-      title: '',
-      notes: ['sample string1',
-              'sample string2',
-              'sample string3',
-              'sample string4'
-      ],
-      wikiResults: ''
+      title: ''
      }
   }
-  
-  handleAddTitle(title){
-    getWikiSummary(title)
-    .then( response => 
-      this.setState({
-        title: title,
-        wikiResults: response
-      }))
+
+  handleAddTitle(event){
+    event.preventDefault()
+    let title = event.target.title.value
+    this.setState({
+      title: title
+    })
   }
 
-  handleAddNote(body){
-    console.log("adding a new note!", body)
-    this.setState({
-      notes: [...this.state.notes, body]
-    })  
+  componentDidMount(){
+    // Gotta filter...
+    // .then(data => data.filter(note => this.setState(prevState => {notes: note.search.search_term === prevState.title})))
   }
 
   
 
   render() {
+    // console.log(this.state)
     return (
       <div className="App">
         <NavBar />
-        <div className="container">
-          <div className="row forms">
-            <div className="col-md-6 note-form">
-              <NoteForm onSubmit={this.handleAddNote.bind(this)} />
-            </div>
-            <div className="col-md-6 search-form">
-              <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
-            </div>  
+        <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
+        <div className="row">
+          <div className="col-md-6">
+            <PhotoLister searchTerm={this.state.title}/>
           </div>
-          <div className="row lister">
-            <NoteLister notes={this.state.notes} apiValue={this.state} />
+          <div className="col-md-6">
+            <VideoLister searchTerm={this.state.title}/>
           </div>
-          <Note notes={this.state.notes}/>
+          <div className="col-md-6">
+            <WikiLister title={this.state.title}  />
+          </div>
         </div>
+        <NoteLister noteTitle={this.state.title}/>
       </div>
     );
   }
