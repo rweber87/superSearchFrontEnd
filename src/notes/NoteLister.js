@@ -25,7 +25,7 @@ export default class NoteLister extends React.Component{
 	
 
 	handleDeleteNote(id){
-		console.log(id)
+		// console.log(id)
     deleteNote(id)
     .then(res => this.setState(prevState => ({
       notes: prevState.notes.filter(note => note.id !== res.data.id),
@@ -48,7 +48,7 @@ export default class NoteLister extends React.Component{
 
 	render(){
 		const filtered = this.state.notes.filter(note => note.search.search_term === this.props.noteTitle)
-	
+		console.log(this.state)
 
 	const notesDisplay = filtered.map((note, i) => <li key={i}><Note onEdit={this.handleEditNote.bind(this)} onDelete={this.handleDeleteNote.bind(this)} note={note}/></li> )
 
