@@ -15,6 +15,11 @@ export default class PhotoLister extends React.Component {
     }
   }
 
+  componentDidMount(){
+    if(this.props.searchTerm){
+      this.fetchFlickrPhotos(this.props.searchTerm)
+    }
+  }
 
   componentWillReceiveProps(nextProps){
     this.fetchFlickrPhotos(nextProps.searchTerm)
@@ -43,3 +48,5 @@ export default class PhotoLister extends React.Component {
 
 
 }// end PhotoLister
+
+
