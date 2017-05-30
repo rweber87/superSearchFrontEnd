@@ -39,7 +39,7 @@ export function getYoutubeVideos(searchTerm){
   //input search term returns array of photos
   export function getFlickrPhotos(searchTerm){
     const API_KEY = '6fa28d45fbf10f69eb12d77eaa1121ae'
-    let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&format=json&nojsoncallback=1&text=${searchTerm}&extras=url_o`
+    let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&format=json&nojsoncallback=1&text=${searchTerm}&extras=url_o&sort=interestingness-desc&safe_search=1`
     return axios.get(url)
   }
 
@@ -53,4 +53,8 @@ export function getYoutubeVideos(searchTerm){
 
   export function deleteNote(noteId){
     return axios({method: 'delete', url:'http://localhost:3000/api/v1/note' , data: {id: noteId}} )
+  }
+
+  export function editNote(id,body){
+    return axios({method: 'patch', url:'http://localhost:3000/api/v1/note' , data: {id: id, body: body}} )
   }
