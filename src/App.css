@@ -1,14 +1,115 @@
-.form {
-    padding-bottom: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: gray;
-    box-shadow: 5px 5px 5px ;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* Note Lister Styling*/
+.noteList-container{
+  height:1000px;
+  width:400px;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  margin-right:-15px;
+  margin-top:5px;
+  background-color:#fafafa;
+  box-shadow: 5px 5px 5px #888888;
+  /*opacity: 0.5;*/
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 }
-
-.note-container {
-    position: right;
-    padding-left: 40px;
-    margin-left: 40px;
-    
+.noteList-header{
+  width:400px;
+  height:60px;
+  margin-top:-20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color:#34495e;
+}
+.noteList-title-wrapper{
+  margin-left:20px;
+}
+.notes-container{
+  margin-left:20px;
+  padding-top:20px;
+  height:570px;
+  position: relative;
+  list-style-type: none;
+  overflow-y: scroll;
+}
+.note{
+  width:360px;
+  padding-bottom:20px;
+  padding-top:20px;
+  padding-left:20px;
+  margin-bottom:10px;
+}
+#note-title{
+  float:left;
+  padding-top:2px;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+#note-count{
+  width:22px;
+  height:22px;
+  background-color:#2ecc71;
+  font-family: 'Roboto', sans-serif;
+  border-radius:50%;
+  margin-top:20px;
+  margin-right:20px;
+  float:right;
+  text-align: center;
+  vertical-align: middle;
+}
+.noteForm-container{
+  width:400px;
+  float:right;
+}
+#noteForm-input{
+  text-align: top;
+  width:360px;
+  margin-left:20px;
+  height:150px;
+  padding-top:0px;
+  border-radius: 2px;
+  border:none;
+  box-shadow: 2px 2px 2px 0px #888888;
+}
+/*Photo Styling*/
+.photoPlane{
+  height:1200px;
+  width:1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /*overflow-x: scroll;*/
+  /* Prevent vertical gaps */
+  /*line-height: 0;
+  /*-webkit-column-count: 2;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    2;
+  -moz-column-gap:      0px;
+  column-count:         2;
+  column-gap:           0px;*/
+}
+.photo {
+  margin:10px;
+  float:left;
+  width: 100% !important;
+  height: auto !important;
+}
+/*Video Styling*/
+.videoPlane{
+  height:620px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;
+}
+.video {
+  margin:10px;
+  float:left;
+  width: 100% !important;
+  height: auto !important;
 }
