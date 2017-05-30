@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function getYoutubeVideos(searchTerm){
     const API_KEY = "AIzaSyB9-C6isL_8dRIskc8JN2HXV8WttDD7Fws"
-    const maxResults = 20
+    const maxResults = 10
     let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${API_KEY}&q=${searchTerm}&type=video&maxResults=${maxResults}`
     return axios.get(url)
 }
@@ -19,18 +19,21 @@ export function getYoutubeVideos(searchTerm){
       let wikiObj = ''
       return wikiObj = {wiki: summary, url: url }
     })
-    
+
     return wikiResult
   }
 
   function unpluralizeSearchTerm(searchTerm){
-    let sentenceArray = searchTerm.split(" ")
+    if (searchTerm.length > 0) {
+      let sentenceArray = searchTerm.split(" ")
     let lastWord = sentenceArray[sentenceArray.length-1]
     if(lastWord[lastWord.length-1] === "s" || lastWord[lastWord.length-1] === "S"){
       lastWord = lastWord.slice(0, lastWord.length - 1)
     }
     sentenceArray[sentenceArray.length - 1] = lastWord
     return sentenceArray.map( word => word[0].toUpperCase() + word.slice(1, word.length)).join(" ")
+    }
+
   }
 
   //input search term returns array of photos

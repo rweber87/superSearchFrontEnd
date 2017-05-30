@@ -6,14 +6,14 @@ import { getYoutubeVideos } from '../api'
 export default class VideoLister extends React.Component {
   constructor(props){
     super(props)
-
     this.state = {
       videos: []
     }
   }
 
-  componentDidMount(){
-    this.fetchYoutubeVideos('new york')
+
+  componentWillReceiveProps(nextProps){
+  	this.fetchYoutubeVideos(nextProps.searchTerm)
   }
 
   fetchYoutubeVideos(searchTerm){

@@ -27,14 +27,16 @@ class NoteForm extends React.Component{
 
 	render() {
 		return(
-			<div>
+			<div className="input-field col s12">
 				<form id="noteForm-form" onSubmit={this.handleSubmit.bind(this)} autoComplete="off">
-					<input type="textbox" id="noteForm-input" onChange={this.handleChange.bind(this)} name="note" value={this.state.body} />
+					<input placeholder="ADD NOTES HERE!" type="textbox" id="noteForm-input" onChange={this.handleChange.bind(this)} name="note" value={this.state.body} />
 				</form>
 			</div>
 		)
 	}
 
 }
+
+
 
 export default NoteForm

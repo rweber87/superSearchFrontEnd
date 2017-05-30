@@ -15,9 +15,9 @@ export default class PhotoLister extends React.Component {
     }
   }
 
-  componentDidMount(){
-    this.fetchFlickrPhotos('new york')
-    console.log("state photos: ",this.state.photos)
+
+  componentWillReceiveProps(nextProps){
+    this.fetchFlickrPhotos(nextProps.searchTerm)
   }
 
   fetchFlickrPhotos(searchTerm){
