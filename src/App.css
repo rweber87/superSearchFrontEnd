@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 /* Note Lister Styling*/
 .noteList-container{
-  height:700px;
+  height:1000px;
   width:400px;
-  float: right;
-  margin-right:20px;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  margin-right:-15px;
   margin-top:5px;
   background-color:#fafafa;
-  border-radius:20px;
   box-shadow: 5px 5px 5px #888888;
+  /*opacity: 0.5;*/
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 .noteList-header{
   width:400px;
@@ -24,9 +27,10 @@
 .notes-container{
   margin-left:20px;
   padding-top:20px;
-  height:460px;
+  height:570px;
   position: relative;
   list-style-type: none;
+  overflow-y: scroll;
 }
 .note{
   width:360px;
@@ -66,4 +70,46 @@
   border-radius: 2px;
   border:none;
   box-shadow: 2px 2px 2px 0px #888888;
+}
+/*Photo Styling*/
+.photoPlane{
+  height:1200px;
+  width:1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /*overflow-x: scroll;*/
+  /* Prevent vertical gaps */
+  /*line-height: 0;
+  /*-webkit-column-count: 2;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    2;
+  -moz-column-gap:      0px;
+  column-count:         2;
+  column-gap:           0px;*/
+}
+.photo {
+  margin:10px;
+  float:left;
+  width: 100% !important;
+  height: auto !important;
+}
+/*Video Styling*/
+.videoPlane{
+  height:620px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;
+}
+.video {
+  margin:10px;
+  float:left;
+  width: 100% !important;
+  height: auto !important;
 }

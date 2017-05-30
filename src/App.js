@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import SearchForm from './searchForm'
 import NavBar from './NavBar'
-import NoteLister from './notelister/NoteLister'
-import {getYoutubeVideos, getWikiSummary, getFlickrPhotos} from './api'
+import NoteLister from './notes/NoteLister'
+import PhotoLister from './photos/PhotoLister'
+import VideoLister from './videos/VideoLister'
+import {getYoutubeVideos, getWikiSummary} from './api'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -34,6 +36,14 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
+        <div className="row">
+          <div className="col-md-6">
+            <PhotoLister searchTerm={this.state.title}/>
+          </div>
+          <div className="col-md-6">
+            <VideoLister searchTerm={this.state.title}/>
+          </div>
+        </div>
         <NoteLister />
       </div>
     );

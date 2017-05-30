@@ -3,7 +3,7 @@ import React from 'react'
 const SearchForm = (props)=> {
 
 	return (
-		<div>
+		<div className="row">
 			<form onSubmit={props.onSubmit}>
 					<div className="col-xs-4 form">
 						<br/>
