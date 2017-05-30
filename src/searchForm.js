@@ -7,34 +7,32 @@ class SearchForm extends React.Component {
 
 		this.state = {
 			title: '',
-			notes: []
 		}
 		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleChange(event){
-		const target = event.target;
-    	const value = target.value;
-    	const name = target.name;
-
+		const value = event.target.value;
 		this.setState({
-			[name]: value 
+			title: value 
 		})
 	}
 
 	handleSubmit(event){
 		event.preventDefault();
-		this.props.onSubmit( this.state.title, this.state.notes)
+		this.props.onSubmit( this.state.title )
+		this.setState({title: ''})
+		
 	}
 
 	render() {
 		return(
 			<div>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-			    	<div className="col-xs-4 form">
+				<form className="search-form" onSubmit={this.handleSubmit.bind(this)}>
+			    	<div className="col-md-6 col-md-offset-3 form">
 			    		<br/>
 			    		<label>Title</label>
-				    	<input name="title" className="form-control" placeholder="Enter Title" onChange={this.handleChange}/>
+				    	<input name="title" type='text' value={this.state.title}className="form-control" placeholder="Enter Title" onChange={this.handleChange}/>
 				    	<br/>
 				    	<button value='Submit'>Submit</button>
 			    	</div>

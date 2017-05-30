@@ -3,12 +3,39 @@
     margin-left: 10px;
     border-radius: 5px;
     background-color: gray;
-    box-shadow: 5px 5px 5px ;
+    box-shadow: 5px 5px 5px;
+    position: center;
+}
+.forms * {
+	float: center;
+	position: center;
+	vertical-align: center;
+}
+.table {
+	border: 1px solid #e1e1e8;
 }
 
-.note-container {
-    position: right;
-    padding-left: 40px;
-    margin-left: 40px;
-    
+.table-striped>tr:nth-of-type(odd) {
+    background-color: #e2dddd;
 }
+
+.notes {
+	position: auto;
+	text-align: center;
+}
+
+.wikipedia {
+	position: auto;
+	text-align: center;
+}
+
+.search-form {
+	text-align: center;
+	float: center;
+}
+
+.note-form {
+	text-align: center;
+	position: center;
+}
+
