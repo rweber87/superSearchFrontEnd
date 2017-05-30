@@ -1,14 +1,9 @@
+import axios from 'axios'
 export function getYoutubeVideos(searchTerm){
     const API_KEY = "AIzaSyB9-C6isL_8dRIskc8JN2HXV8WttDD7Fws"
     let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${API_KEY}&q=${searchTerm}&type=video&maxResults=10`
-    axios.get(url)
-      .then( response => {
-        let videos = response.data.items.map(function(video){
-          return  Object.assign(video.snippet, video.id);
-        })
-        console.log("youtube videos: ",videos)
-      })
-  }
+    return axios.get(url)
+}
 
   // input search term returns wikipedia summary
   export function getWikiSummary(searchTerm){
@@ -20,7 +15,7 @@ export function getYoutubeVideos(searchTerm){
       let summary = data.extract
       let title = data.title
       console.log("wiki result: ", data)
-      console.log("wiki summary: , summary");
+      console.log("wiki summary: ", summary);
     })
   }
 
