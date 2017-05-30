@@ -1,5 +1,5 @@
 import React from 'react'
-import Note from './Note'
+import Note from './notes/Note'
 import {getWikiSummary} from './api'
 
 class WikiLister extends React.Component {
@@ -11,18 +11,27 @@ class WikiLister extends React.Component {
 		}
 	}
 
+	componentWillReceiveProps(nextProps){
+		console.log("in component will recieve props")
+		console.log("next props: ", nextProps)
+		getWikiSummary(nextProps.title)
+		.then( response =>
+			this.setState({
+				wikiResults: response
+		}))
+	}
+
 	componentDidMount(){
-	    this.handleWikiAPI('new york')
-	    console.log("state photos: ",this.state.photos)
+	    this.handleWikiAPI()
 	  }
 
 	handleWikiAPI(){
-	    getWikiSummary('new york')
-	    .then( response => 
+	    getWikiSummary(this.props.title)
+	    .then( response =>
 	      this.setState({
 	        wikiResults: response
-	    }))  
-    }
+	    }))
+  }
 
 	render() {
 		const wiki = this.state.wikiResults

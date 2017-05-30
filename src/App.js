@@ -15,7 +15,7 @@ class App extends Component {
   constructor(){
     super()
      this.state = {
-      title: ''
+      title: 'cats'
      }
   }
 
@@ -32,7 +32,7 @@ class App extends Component {
     // .then(data => data.filter(note => this.setState(prevState => {notes: note.search.search_term === prevState.title})))
   }
 
-  
+
 
   render() {
     // console.log(this.state)
@@ -42,10 +42,10 @@ class App extends Component {
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
         <div className="row">
           <div className="col-md-6">
-            <PhotoLister searchTerm={this.state.title}/>
+            {/* <PhotoLister searchTerm={this.state.title}/> */}
           </div>
           <div className="col-md-6">
-            <VideoLister searchTerm={this.state.title}/>
+            {/* <VideoLister searchTerm={this.state.title}/> */}
           </div>
           <div className="col-md-6">
             <WikiLister title={this.state.title}  />
