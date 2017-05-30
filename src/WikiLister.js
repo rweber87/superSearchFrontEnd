@@ -11,27 +11,21 @@ class WikiLister extends React.Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps){
-		console.log("in component will recieve props")
-		console.log("next props: ", nextProps)
-		getWikiSummary(nextProps.title)
-		.then( response =>
-			this.setState({
-				wikiResults: response
-		}))
-	}
+  componentWillReceiveProps(nextProps){
+  	this.handleWikiAPI(nextProps.title)
+  }
 
-	componentDidMount(){
-	    this.handleWikiAPI()
-	  }
-
-	handleWikiAPI(){
-	    getWikiSummary(this.props.title)
+	handleWikiAPI(search){
+		console.log('called wiki api')
+			getWikiSummary(search)
 	    .then( response =>
 	      this.setState({
 	        wikiResults: response
 	    }))
-  }
+
+
+    }
+
 
 	render() {
 		const wiki = this.state.wikiResults

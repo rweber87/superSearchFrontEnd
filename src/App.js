@@ -45,7 +45,7 @@ class App extends Component {
             {/* <PhotoLister searchTerm={this.state.title}/> */}
           </div>
           <div className="col-md-6">
-            {/* <VideoLister searchTerm={this.state.title}/> */}
+            <VideoLister searchTerm={this.state.title}/>
           </div>
           <div className="col-md-6">
             <WikiLister title={this.state.title}  />
