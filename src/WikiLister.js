@@ -1,5 +1,5 @@
 import React from 'react'
-import Note from './Note'
+import Note from './notes/Note'
 import {getWikiSummary} from './api'
 
 class WikiLister extends React.Component {
