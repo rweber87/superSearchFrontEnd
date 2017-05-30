@@ -13,17 +13,18 @@
   /*opacity: 0.5;*/
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
+.row{
+  padding-left: 20px;
+}
 .noteList-header{
   width:400px;
-  height:60px;
+  height:100px;
   margin-top:-20px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  background-color:#34495e;
-}
-.noteList-title-wrapper{
-  margin-left:20px;
-}
+/*  background-color:#34495e;
+*/}
+
 .notes-container{
   margin-left:20px;
   padding-top:20px;
@@ -73,19 +74,19 @@
 }
 /*Photo Styling*/
 .photoPlane{
-  height:1200px;
-  width:1000px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  /*overflow-x: scroll;*/
+  height:620px;
+  width:900px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  overflow-x: scroll;
   /* Prevent vertical gaps */
-  /*line-height: 0;
-  /*-webkit-column-count: 2;
+  line-height: 0;
+  -webkit-column-count: 2;
   -webkit-column-gap:   0px;
   -moz-column-count:    2;
   -moz-column-gap:      0px;
   column-count:         2;
-  column-gap:           0px;*/
+  column-gap:           0px;
 }
 .photo {
   margin:10px;
@@ -96,6 +97,7 @@
 /*Video Styling*/
 .videoPlane{
   height:620px;
+  width:900px;
   overflow-y: hidden;
   overflow-x: scroll;
   /* Prevent vertical gaps */

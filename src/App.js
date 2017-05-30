@@ -44,21 +44,15 @@ class App extends Component {
       <div className="App">
         <NavBar toggle={this.toggleNavbar.bind(this)} />
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
-        <div className="links">
-          <Link className="navbar-brand" to="/photos">Photos</Link>
-          <Link className="navbar-brand" to="/videos">Videos</Link>
-        </div>
-        <Switch>
           <div className="row">
-            <div className="col-md-8">
-              <Route path = '/photos' render ={ () => <PhotoLister searchTerm={this.state.title} />}/>
-              <Route path = '/videos' render ={ () => <VideoLister searchTerm={this.state.title} />}/>
+            <div className="col-md-6">
+              <PhotoLister searchTerm={this.state.title} />
+              <VideoLister searchTerm={this.state.title} />
             </div>
             <div className="col-md-4">
               <WikiLister title={this.state.title}  />
             </div>
           </div>
-        </Switch>
         {this.state.toggleBoolean ? <NoteLister noteTitle={this.state.title}/> : ""}
       </div>
     );
