@@ -54,3 +54,7 @@ export function getYoutubeVideos(searchTerm){
   export function deleteNote(noteId){
     return axios({method: 'delete', url:'http://localhost:3000/api/v1/note' , data: {id: noteId}} )
   }
+
+  export function editNote(id,body){
+    return axios({method: 'patch', url:'http://localhost:3000/api/v1/note' , data: {id: id, body: body}} )
+  }

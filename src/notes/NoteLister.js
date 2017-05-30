@@ -2,7 +2,7 @@ import React from 'react'
 import Note from './Note'
 import NoteListerHeader from './NoteListerHeader'
 import NoteForm from './NoteForm'
-import {getNotes, addNote, deleteNote} from '../api'
+import {getNotes, addNote, deleteNote, editNote} from '../api'
 
 
 export default class NoteLister extends React.Component{
@@ -29,8 +29,19 @@ export default class NoteLister extends React.Component{
       notes: prevState.notes.filter(note => note.id !== res.data.id)
     })))}
 
-   handleEditNote(id){
-    console.log('editing --> ', id)
+   handleEditNote(id, body){
+    editNote(id,body).then(res=>{
+    	let newNote = res.data
+    	this.setState({
+    		notes: this.state.notes.map((note)=>{
+    			if(note.id == newNote.id){
+    				return newNote
+    			} else {
+    				return note
+    			}
+    		})
+    	})
+    })
   }
 
 
