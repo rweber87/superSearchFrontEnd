@@ -7,7 +7,7 @@ const NoteListerHeader = (props) => {
 		<div>
       <div className="noteList-title-wrapper">
         <img src="" className="noteList-icon"/>
-        <h3 id="note-title">NOTES</h3>
+        <h3 id="note-title">{props.term}</h3>
         <div id="note-count">{noteCount}</div>
       </div>
 		</div>

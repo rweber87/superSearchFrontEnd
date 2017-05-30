@@ -2,6 +2,8 @@ import React from 'react'
 import Note from './Note'
 import NoteListerHeader from './NoteListerHeader'
 import NoteForm from './NoteForm'
+import {getNotes, addNote, deleteNote} from '../api'
+
 
 export default class NoteLister extends React.Component{
 	constructor(props){
@@ -16,39 +18,49 @@ export default class NoteLister extends React.Component{
 		}
 	}
 
-	handleAddNote(body){
-		this.setState({
-			notes: [...this.state.notes, body],
-			noteCount: this.state.noteCount + 1
-		})
-	}
+  handleAddNote(body){ 
+  // console.log("adding a new note!", body)
+  	addNote(body, this.props.noteTitle)
+    .then(res => this.setState(prevState => ({
+      notes: [...prevState.notes, res.data],
+      noteCount: this.state.notes.length
+    })))
+  }
+	
 
-	handleDeleteNote(note){
-		console.log("in handle delete note")
-		console.log("in handle note: ", note)
-		this.setState({
-			notes: this.state.notes.filter((n)=> n !== note),
-			noteCount: this.state.noteCount - 1
-		})
-	}
+	handleDeleteNote(id){
+		console.log(id)
+    deleteNote(id)
+    .then(res => this.setState(prevState => ({
+      notes: prevState.notes.filter(note => note.id !== res.data.id),
+      noteCount: this.state.notes.length
+    })))}
+
+   handleEditNote(id){
+    console.log('editing --> ', id)
+  }
+
 
 	componentDidMount(){
-		this.setState({
-			noteCount: this.state.notes.length
-		})
+		getNotes()
+    .then(data => this.setState({
+      notes: data,
+      noteCount: this.state.notes.length
+    }))
+	
 	}
 
 	render(){
-		const notesDisplay = this.state.notes.map((note, i) =>
-		<li>
-			<Note body={note} key={i} onDelete={this.handleDeleteNote.bind(this)}/>
-		</li>)
+		const filtered = this.state.notes.filter(note => note.search.search_term === this.props.noteTitle)
+	
+
+	const notesDisplay = filtered.map((note, i) => <li key={i}><Note onEdit={this.handleEditNote.bind(this)} onDelete={this.handleDeleteNote.bind(this)} note={note}/></li> )
 
 		return (
 			<div className="noteList-container">
 
 				<div className="noteList-header">
-					<NoteListerHeader noteCount={this.state.noteCount}/>
+					<NoteListerHeader term={this.props.noteTitle}noteCount={this.state.noteCount}/>
 			  </div>
 
 				<ul className = "notes-container">
