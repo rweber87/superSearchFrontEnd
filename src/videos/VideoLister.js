@@ -12,6 +12,12 @@ export default class VideoLister extends React.Component {
   }
 
 
+  componentDidMount(){
+    if(this.props.searchTerm){
+      this.fetchYoutubeVideos(this.props.searchTerm)
+    }
+  }
+
   componentWillReceiveProps(nextProps){
   	this.fetchYoutubeVideos(nextProps.searchTerm)
   }

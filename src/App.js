@@ -9,6 +9,7 @@ import WikiLister from './WikiLister'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import {Switch, Route, Link} from 'react-router-dom'
 
 class App extends Component {
 
@@ -35,17 +36,21 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
-        <div className="row">
-          <div className="col-md-4">
-            <PhotoLister searchTerm={this.state.title}/>
-          </div>
-          <div className="col-md-4">
-            <VideoLister searchTerm={this.state.title}/>
-          </div>
-          <div className="col-md-4">
-            <WikiLister title={this.state.title}  />
-          </div>
+        <div className="links">
+          <Link className="navbar-brand" to="/photos">Photos</Link>
+          <Link className="navbar-brand" to="/videos">Videos</Link>
         </div>
+        <Switch>
+          <div className="row">
+            <div className="col-md-8">
+              <Route path = '/photos' render ={ () => <PhotoLister searchTerm={this.state.title} />}/>
+              <Route path = '/videos' render ={ () => <VideoLister searchTerm={this.state.title} />}/>
+            </div>
+            <div className="col-md-4">
+              <WikiLister title={this.state.title}  />
+            </div>
+          </div>
+        </Switch>
         <NoteLister noteTitle={this.state.title}/>
       </div>
     );
@@ -53,3 +58,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+
