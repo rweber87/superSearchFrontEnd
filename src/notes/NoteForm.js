@@ -20,6 +20,9 @@ class NoteForm extends React.Component{
 	handleSubmit(event){
 		event.preventDefault();
 		this.props.onSubmit( this.state.body)
+		this.setState({
+			body: ''
+		})
 	}
 
 
@@ -28,7 +31,7 @@ class NoteForm extends React.Component{
 		return(
 			<div>
 				<form id="noteForm-form" onSubmit={this.handleSubmit.bind(this)} autoComplete="off">
-					<input type="textbox" id="noteForm-input" onChange={this.handleChange.bind(this)} name="note"  />
+					<input type="textbox" id="noteForm-input" onChange={this.handleChange.bind(this)} name="note" value={this.state.body} />
 				</form>
 			</div>
 		)
@@ -37,12 +40,3 @@ class NoteForm extends React.Component{
 }
 
 export default NoteForm
-{/* <form onSubmit={this.handleSubmit.bind(this)}>
-		<div className="col-xs-4 form">
-			<br/>
-			<label>Note</label>
-			<input name="note" className="form-control" placeholder="Enter Title" onChange={this.handleChange.bind(this)}/>
-			<br/>
-			<button value='Submit'>Submit</button>
-		</div>
-</form> */}

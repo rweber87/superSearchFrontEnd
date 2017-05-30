@@ -11,7 +11,7 @@ export default class NoteLister extends React.Component{
 							'sample note 2',
 							'sample note 3',
 							'sample note 4'
-			],
+						 ],
 			noteCount: 0
 		}
 	}
@@ -23,8 +23,26 @@ export default class NoteLister extends React.Component{
 		})
 	}
 
+	handleDeleteNote(note){
+		console.log("in handle delete note")
+		console.log("in handle note: ", note)
+		this.setState({
+			notes: this.state.notes.filter((n)=> n !== note),
+			noteCount: this.state.noteCount - 1
+		})
+	}
+
+	componentDidMount(){
+		this.setState({
+			noteCount: this.state.notes.length
+		})
+	}
+
 	render(){
-		const notesDisplay = this.state.notes.map((note, i) => <li><Note body={note} key={i}/></li> )
+		const notesDisplay = this.state.notes.map((note, i) =>
+		<li>
+			<Note body={note} key={i} onDelete={this.handleDeleteNote.bind(this)}/>
+		</li>)
 
 		return (
 			<div className="noteList-container">
