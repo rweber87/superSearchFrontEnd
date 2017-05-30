@@ -41,12 +41,12 @@ class App extends Component {
         <NavBar />
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
         <div className="row">
-          <div className="col-md-6">
-            <PhotoLister searchTerm={this.state.title}/>
-          </div>
-          <div className="col-md-6">
-            <VideoLister searchTerm={this.state.title}/>
-          </div>
+          {/*<div className="col-md-6">
+                      <PhotoLister searchTerm={this.state.title}/>
+                    </div>
+                    <div className="col-md-6">
+                      <VideoLister searchTerm={this.state.title}/>
+                    </div>*/}
           <div className="col-md-6">
             <WikiLister title={this.state.title}  />
           </div>

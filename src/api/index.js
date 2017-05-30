@@ -24,13 +24,16 @@ export function getYoutubeVideos(searchTerm){
   }
 
   function unpluralizeSearchTerm(searchTerm){
-    let sentenceArray = searchTerm.split(" ")
+    if (searchTerm.length > 0) {
+      let sentenceArray = searchTerm.split(" ")
     let lastWord = sentenceArray[sentenceArray.length-1]
     if(lastWord[lastWord.length-1] === "s" || lastWord[lastWord.length-1] === "S"){
       lastWord = lastWord.slice(0, lastWord.length - 1)
     }
     sentenceArray[sentenceArray.length - 1] = lastWord
     return sentenceArray.map( word => word[0].toUpperCase() + word.slice(1, word.length)).join(" ")
+    }
+    
   }
 
   //input search term returns array of photos

@@ -11,17 +11,20 @@ class WikiLister extends React.Component {
 		}
 	}
 
-	componentDidMount(){
-	    this.handleWikiAPI('new york')
-	    console.log("state photos: ",this.state.photos)
-	  }
 
-	handleWikiAPI(){
-	    getWikiSummary('new york')
+  componentWillReceiveProps(nextProps){
+  	this.handleWikiAPI(nextProps.title)
+  }
+
+	handleWikiAPI(search){
+		console.log('called wiki api')
+			getWikiSummary(search)
 	    .then( response => 
 	      this.setState({
 	        wikiResults: response
 	    }))  
+
+	    
     }
 
 	render() {
