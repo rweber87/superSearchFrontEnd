@@ -22,6 +22,8 @@ class NoteForm extends React.Component{
 		this.props.onSubmit( this.state.body)
 	}
 
+	
+
 	render() {
 		return(
 			<div>

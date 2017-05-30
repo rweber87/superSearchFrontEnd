@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export function getYoutubeVideos(searchTerm){
     const API_KEY = "AIzaSyB9-C6isL_8dRIskc8JN2HXV8WttDD7Fws"
     let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${API_KEY}&q=${searchTerm}&type=video&maxResults=10`
@@ -35,4 +37,16 @@ export function getYoutubeVideos(searchTerm){
       console.log("flickr response: ", response.data.photos.photo)
       console.log("flickr photos: ", photos)
     })
+  }
+
+  export function getNotes(){
+    return axios.get('http://localhost:3000/api/v1/note').then(res => res.data)
+  }
+
+  export function addNote(body, title){
+    return axios.post('http://localhost:3000/api/v1/note', {body: body, search_term: title})
+  }
+
+  export function deleteNote(noteId){
+    return axios({method: 'delete', url:'http://localhost:3000/api/v1/note' , data: {id: noteId}} )
   }
