@@ -9,8 +9,7 @@ export default class NoteLister extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			notes: ['sample note 1','sample note 2','sample note 3'],
-			noteCount: 0
+			notes: ['sample note 1','sample note 2','sample note 3']
 		}
 	}
 
@@ -18,8 +17,7 @@ export default class NoteLister extends React.Component{
   // console.log("adding a new note!", body)
   	addNote(body, this.props.noteTitle)
     .then(res => this.setState(prevState => ({
-      notes: [...prevState.notes, res.data],
-      noteCount: this.state.notes.length
+      notes: [...prevState.notes, res.data]
     })))
   }
 	
@@ -28,8 +26,7 @@ export default class NoteLister extends React.Component{
 		// console.log(id)
     deleteNote(id)
     .then(res => this.setState(prevState => ({
-      notes: prevState.notes.filter(note => note.id !== res.data.id),
-      noteCount: this.state.notes.length
+      notes: prevState.notes.filter(note => note.id !== res.data.id)
     })))}
 
    handleEditNote(id){
@@ -40,8 +37,7 @@ export default class NoteLister extends React.Component{
 	componentDidMount(){
 		getNotes()
     .then(data => this.setState({
-      notes: data,
-      noteCount: this.state.notes.length
+      notes: data
     }))
 	
 	}
@@ -56,7 +52,7 @@ export default class NoteLister extends React.Component{
 			<div className="noteList-container">
 
 				<div className="noteList-header">
-					<NoteListerHeader term={this.props.noteTitle}noteCount={this.state.noteCount}/>
+					<NoteListerHeader term={this.props.noteTitle}noteCount={notesDisplay.length}/>
 			  </div>
 
 				<ul className = "notes-container">
