@@ -50,18 +50,15 @@ export default class NoteLister extends React.Component{
 
 		return (
 			<div className="noteList-container">
-
 				<div className="noteList-header">
 					<NoteListerHeader term={this.props.noteTitle}noteCount={notesDisplay.length}/>
 			  </div>
-
+				<div className="noteForm-container">
+					{this.props.noteTitle ? <NoteForm onSubmit={this.handleAddNote.bind(this)}/> : null }
+				</div>
 				<ul className = "notes-container">
 					{ notesDisplay }
 			  </ul>
-
-				<div className="noteForm-container">
-					<NoteForm onSubmit={this.handleAddNote.bind(this)}/>
-				</div>
 
 			</div>
 		)
