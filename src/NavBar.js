@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function NavBar (){
+function NavBar (props){
 
   return(
     <nav className="navbar navbar-inverse bg-primary">
@@ -9,7 +9,7 @@ function NavBar (){
       <div className="collapse navbar-collapse">
         <div className="navbar-nav">
           <a className="navbar-brand" href="/">Home</a>
-          <a className="navbar-brand" href="/notes">Notes</a>
+          <button className="navbar-brand" onClick={props.toggle}>Notes</button>
         </div>
       </div>
     </nav>

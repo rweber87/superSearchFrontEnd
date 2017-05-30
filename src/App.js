@@ -16,7 +16,8 @@ class App extends Component {
   constructor(){
     super()
      this.state = {
-      title: ''
+      title: '',
+      toggleBoolean: false
      }
   }
 
@@ -28,13 +29,20 @@ class App extends Component {
     })
   }
 
+  toggleNavbar(event){
+    event.preventDefault()
+    const value = this.state.toggleBoolean ? false : true
+    this.setState({
+      toggleBoolean: value
+    })
+  }
 
 
   render() {
     console.log(this.state)
     return (
       <div className="App">
-        <NavBar />
+        <NavBar toggle={this.toggleNavbar.bind(this)} />
         <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
         <div className="links">
           <Link className="navbar-brand" to="/photos">Photos</Link>
@@ -51,7 +59,7 @@ class App extends Component {
             </div>
           </div>
         </Switch>
-        <NoteLister noteTitle={this.state.title}/>
+        {this.state.toggleBoolean ? <NoteLister noteTitle={this.state.title}/> : ""}
       </div>
     );
   }
