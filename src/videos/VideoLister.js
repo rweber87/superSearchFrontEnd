@@ -27,7 +27,7 @@ export default class VideoLister extends React.Component {
 
   render(){
     let videos = this.state.videos
-    let videoDisplay = videos.map((video) => <Video video={video}/>)
+    let videoDisplay = videos.map((video, i) => <Video key={i} video={video}/>)
     return (
       <div className="videoPlane">
         { videoDisplay }
@@ -36,4 +36,4 @@ export default class VideoLister extends React.Component {
   }
 
 
-}// end VideoLister
+}

@@ -49,6 +49,7 @@ export default class NoteLister extends React.Component{
 	const notesDisplay = filtered.map((note, i) => <li key={i}><Note onEdit={this.handleEditNote.bind(this)} onDelete={this.handleDeleteNote.bind(this)} note={note}/></li> )
 
 		return (
+			
 			<div className="noteList-container">
 				<div className="noteList-header">
 					<NoteListerHeader term={this.props.noteTitle}noteCount={notesDisplay.length}/>

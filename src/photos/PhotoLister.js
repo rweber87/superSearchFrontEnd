@@ -33,7 +33,7 @@ export default class PhotoLister extends React.Component {
 
   render(){
     let photos = this.state.photos
-    let photoDisplay = photos.map((photo) => <Photo photo={photo}/>)
+    let photoDisplay = photos.map((photo, i) => <Photo key={i} photo={photo}/>)
     return (
       <div className="photoPlane">
         { photoDisplay }
