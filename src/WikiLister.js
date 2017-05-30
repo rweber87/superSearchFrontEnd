@@ -16,8 +16,7 @@ class WikiLister extends React.Component {
   }
 
 	handleWikiAPI(search){
-		console.log('called wiki api')
-			getWikiSummary(search)
+		getWikiSummary(search)
 	    .then( response =>
 	      this.setState({
 	        wikiResults: response

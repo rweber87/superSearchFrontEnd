@@ -12,6 +12,7 @@ class Note extends React.Component {
 
 
 	render(){
+		console.log('note added')
 		return(
 			<div className="note card">
 				<div className="note-body">
