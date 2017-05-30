@@ -21,8 +21,10 @@ export function getYoutubeVideos(searchTerm){
       let pages = response.data.query.pages
       let data = pages[Object.keys(pages)[0]]
       let summary = data.extract
-      return summary
+      let wikiObj = ''
+      return wikiObj = {wiki: summary, url: url }
     })
+    
     return wikiResult
   }
 

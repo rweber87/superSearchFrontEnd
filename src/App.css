@@ -6,11 +6,23 @@
     box-shadow: 5px 5px 5px;
     position: center;
 }
+
+.wikipedia-logo {
+	padding-top: 20px;
+	height: 160px;
+	width: 150px;
+}
+
 .forms * {
 	float: center;
 	position: center;
 	vertical-align: center;
 }
+
+.wiki-results {
+	
+}
+
 .table {
 	border: 1px solid #e1e1e8;
 }

@@ -57,7 +57,7 @@ class App extends Component {
             </div>  
           </div>
           <div className="row lister">
-            <NoteLister notes={this.state.notes} apiValue={this.state.wikiResults} />
+            <NoteLister notes={this.state.notes} apiValue={this.state} />
           </div>
           <Note notes={this.state.notes}/>
         </div>

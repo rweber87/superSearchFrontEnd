@@ -32,7 +32,7 @@ class SearchForm extends React.Component {
 			    	<div className="col-md-6 col-md-offset-3 form">
 			    		<br/>
 			    		<label>Title</label>
-				    	<input name="title" type='text' value={this.state.title}className="form-control" placeholder="Enter Title" onChange={this.handleChange}/>
+				    	<input name="title" type='text' value={this.state.title} className="form-control" placeholder="Enter Title" onChange={this.handleChange}/>
 				    	<br/>
 				    	<button value='Submit'>Submit</button>
 			    	</div>
