@@ -17,7 +17,9 @@ class WikiLister extends React.Component {
 	  }
 
 	handleWikiAPI(){
-	    getWikiSummary('new york')
+		let title = this.props.title? this.props.title : 'New York'
+
+	    getWikiSummary(title)
 	    .then( response => 
 	      this.setState({
 	        wikiResults: response
