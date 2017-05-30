@@ -9,11 +9,7 @@ export default class NoteLister extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			notes: ['sample note 1',
-							'sample note 2',
-							'sample note 3',
-							'sample note 4'
-						 ],
+			notes: ['sample note 1','sample note 2','sample note 3'],
 			noteCount: 0
 		}
 	}

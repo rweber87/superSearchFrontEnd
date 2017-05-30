@@ -10,15 +10,27 @@ export function getYoutubeVideos(searchTerm){
   // input search term returns wikipedia summary
   export function getWikiSummary(searchTerm){
     // let genResultsSample = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search=Albert"
-    let url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=${searchTerm}&origin=*`
-    axios.get(url).then( response => {
+    let newSearchTerm = unpluralizeSearchTerm(searchTerm)
+    let url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=${newSearchTerm}&origin=*`
+    let wikiResult = axios.get(url).then( (response) => {
       let pages = response.data.query.pages
       let data = pages[Object.keys(pages)[0]]
       let summary = data.extract
-      let title = data.title
-      console.log("wiki result: ", data)
-      console.log("wiki summary: ", summary);
+      let wikiObj = ''
+      return wikiObj = {wiki: summary, url: url }
     })
+    
+    return wikiResult
+  }
+
+  function unpluralizeSearchTerm(searchTerm){
+    let sentenceArray = searchTerm.split(" ")
+    let lastWord = sentenceArray[sentenceArray.length-1]
+    if(lastWord[lastWord.length-1] === "s" || lastWord[lastWord.length-1] === "S"){
+      lastWord = lastWord.slice(0, lastWord.length - 1)
+    }
+    sentenceArray[sentenceArray.length - 1] = lastWord
+    return sentenceArray.map( word => word[0].toUpperCase() + word.slice(1, word.length)).join(" ")
   }
 
   //input search term returns array of photos

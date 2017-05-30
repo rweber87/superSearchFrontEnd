@@ -11,7 +11,6 @@ class NoteForm extends React.Component{
 
 	handleChange(event){
 		const value = event.target.value;
-		console.log("form value: ", value)
 		this.setState({
 			body: value
 		})
