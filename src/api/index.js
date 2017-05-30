@@ -39,7 +39,7 @@ export function getYoutubeVideos(searchTerm){
   //input search term returns array of photos
   export function getFlickrPhotos(searchTerm){
     const API_KEY = '6fa28d45fbf10f69eb12d77eaa1121ae'
-    let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&format=json&nojsoncallback=1&text=${searchTerm}&extras=url_o`
+    let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&format=json&nojsoncallback=1&text=${searchTerm}&extras=url_o&sort=interestingness-desc&safe_search=1`
     return axios.get(url)
   }
 
