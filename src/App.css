@@ -14,7 +14,7 @@
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 .row{
-  padding-left: 20px;
+  padding-left: 13px;
 }
 .noteList-header{
   width:400px;
@@ -33,7 +33,7 @@
 }
 
 .notes-container{
-  margin-left:20px;
+  margin-left:13px;
   padding-top:20px;
   height:570px;
   position: relative;
@@ -52,6 +52,9 @@
   padding-top:2px;
   color:white;
   font-family: 'Roboto', sans-serif;
+}
+.note-body{
+  position: right;
 }
 #note-count{
   width:22px;
@@ -72,7 +75,7 @@
 #noteForm-input{
   text-align: top;
   width:360px;
-  margin-left:20px;
+  margin-left:13px;
   height:150px;
   padding-top:0px;
   border-radius: 2px;
@@ -83,6 +86,7 @@
 .wikipedia {
   height:1175px;
   overflow: scroll;
+  border-style: solid;
 }
 
 .photoPlane{
@@ -99,6 +103,7 @@
   -moz-column-gap:      0px;
   column-count:         2;
   column-gap:           0px;
+  border-style: solid;
 }
 .photo {
   margin:10px;
@@ -108,7 +113,7 @@
 }
 /*Video Styling*/
 .videoPlane{
-  height:620px;
+  height:555px;
   width:auto;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -120,6 +125,7 @@
   -moz-column-gap:      0px;
   column-count:         3;
   column-gap:           0px;
+  border-style: solid;
 }
 .video {
   margin:10px;

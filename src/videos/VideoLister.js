@@ -24,7 +24,6 @@ export default class VideoLister extends React.Component {
 
   fetchYoutubeVideos(searchTerm){
     getYoutubeVideos(searchTerm).then( response => {
-      let videos = response.data.items.map((video) => Object.assign(video.snippet, video.id))
       this.setState({
         videos: response.data.items.map((video) => Object.assign(video.snippet, video.id))
       })

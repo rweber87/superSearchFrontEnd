@@ -5,7 +5,7 @@ const Photo = (props) => {
 
   return (
     <div className="photo">
-      <img src={photo} width="400px"/>
+      <img alt='' src={photo} width="400px"/>
     </div>
   )
 }

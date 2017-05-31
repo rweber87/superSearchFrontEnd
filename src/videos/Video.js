@@ -6,7 +6,7 @@ const Video = (props) => {
 
   return (
     <div className="video">
-      <iframe src={"https://www.youtube.com/embed/"+videoId} width="400px" height="260px"></iframe>
+      <iframe title={videoId} src={"https://www.youtube.com/embed/"+videoId} width="400px" height="260px"></iframe>
     </div>
   )
 }

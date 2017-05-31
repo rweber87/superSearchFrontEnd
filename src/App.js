@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import SearchForm from './searchForm'
 import NavBar from './NavBar'
 import NoteLister from './notes/NoteLister'
@@ -9,7 +8,7 @@ import WikiLister from './WikiLister'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import {Switch, Route, Link} from 'react-router-dom'
+
 
 class App extends Component {
 

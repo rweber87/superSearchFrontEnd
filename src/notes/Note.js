@@ -1,5 +1,4 @@
 import React from 'react'
-import {Switch, Route, Link} from 'react-router-dom'
 import NoteEditForm from './NoteEditForm'
 
 class Note extends React.Component {
@@ -34,9 +33,11 @@ class Note extends React.Component {
 					<div className="note-body">
 						<div className="note-text">
 							{ this.props.note.body }
-							<button onClick={this.toggleEdit.bind(this)}>Edit</button>
-							<button onClick={() => this.props.onDelete(this.state.note.id)}>Delete</button>
 						</div>
+					</div>
+					<div className="form-buttons">
+						<button onClick={this.toggleEdit.bind(this)}>Edit</button>
+						<button onClick={() => this.props.onDelete(this.state.note.id)}>Delete</button>
 					</div>
 				</div>
 			)

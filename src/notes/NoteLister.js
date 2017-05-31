@@ -34,7 +34,7 @@ export default class NoteLister extends React.Component{
     	let newNote = res.data
     	this.setState({
     		notes: this.state.notes.map((note)=>{
-    			if(note.id == newNote.id){
+    			if(note.id === newNote.id){
     				return newNote
     			} else {
     				return note
