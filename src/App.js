@@ -25,6 +25,7 @@ class App extends Component {
     let title = event.target.title.value
     this.setState({
       title: title,
+      toggleBoolean: true
     })
   }
 

@@ -18,7 +18,7 @@
 }
 .noteList-header{
   width:400px;
-  height:100px;
+  height:75px;
   margin-top:-20px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -54,6 +54,7 @@ i#note-icon .glyphicon{
 #note-title{
   float:left;
   padding-top:2px;
+  padding-left: 10px;
   color:white;
   font-family: 'Roboto', sans-serif;
 }

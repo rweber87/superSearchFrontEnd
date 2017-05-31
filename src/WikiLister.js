@@ -25,10 +25,11 @@ class WikiLister extends React.Component {
 
 	render() {
 		const wiki = this.state.wikiResults
+		const url = "https://en.wikipedia.org/wiki/" + this.props.title
 		return(
 			<div className="row">
 			    <div className="col-md-6 col-sm-3 wikipedia">
-			      <a href={wiki.url} ><img alt="" className="wikipedia-logo" src="https://www.wholewhale.com/wp-content/uploads/Picture-42.png" /></a>
+			      <a href={url} ><img alt="" className="wikipedia-logo" src="http://melissaagnes.com/wp-content/uploads/2015/01/wikipedia-logo-201x200.png" /></a>
 			      <p className="wiki-results">{wiki.wiki}</p>
 			      <p></p>
 			    </div>
