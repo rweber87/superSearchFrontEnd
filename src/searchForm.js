@@ -5,13 +5,11 @@ const SearchForm = (props)=> {
 
 	return (
 		<div className="row">
-			<form onSubmit={props.onSubmit}>
-					<div className="col-xs-4 form">
-						<br/>
+			<form onSubmit={props.onSubmit} className="form-group has-feedback">
+					<div className="col-xs-4 form ">
 						<label>Title</label>
 						<input name="title" className="form-control" placeholder="Enter Title" />
-						<br/>
-						<button value='Submit'>Submit</button>
+						<i className="glyphicon glyphicon-search form-control-feedback"></i>
 					</div>
 			</form>
 		</div>
