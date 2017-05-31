@@ -11,7 +11,9 @@ class WikiLister extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps){
+		if(nextProps.title.length > 0){
 	  	this.handleWikiAPI(nextProps.title)
+    }
 	}
 
 	handleWikiAPI(search){
