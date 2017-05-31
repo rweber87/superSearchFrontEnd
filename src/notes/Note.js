@@ -36,8 +36,8 @@ class Note extends React.Component {
 						</div>
 					</div>
 					<div className="form-buttons">
-						<button onClick={this.toggleEdit.bind(this)}>Edit</button>
-						<button onClick={() => this.props.onDelete(this.state.note.id)}>Delete</button>
+						<button className="glyphicon glyphicon-pencil"onClick={this.toggleEdit.bind(this)}></button>
+						<button className="glyphicon glyphicon-remove" onClick={() => this.props.onDelete(this.state.note.id)}></button>
 					</div>
 				</div>
 			)
@@ -53,6 +53,5 @@ class Note extends React.Component {
 }
 
 export default Note
-// <button onClick={() => this.props.onEdit(this.state.note.id)}><Link to="/edit">Edit</Link></button>
 
 
