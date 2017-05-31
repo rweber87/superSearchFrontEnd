@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 /* Note Lister Styling*/
+body{
+  transform: translateX(170px);
+  overflow-x:hidden;
+  transition-property: transform;
+  transition-duration: 1s;
+}
 .noteList-container{
   height:1239px;
   width:400px;
@@ -15,6 +21,10 @@
 }
 .row{
   padding-left: 13px;
+}
+
+.row.content{
+  position: center;
 }
 .noteList-header{
   width:400px;
@@ -89,9 +99,15 @@ i#note-icon .glyphicon{
 }
 /*Photo Styling*/
 .wikipedia {
+  position:center;
   height:1175px;
   overflow: scroll;
   border-style: solid;
+}
+
+div.wikipedia{
+  padding-left: 40px;
+  position:center;
 }
 
 .photoPlane{

@@ -18,8 +18,8 @@ export function getYoutubeVideos(searchTerm){
       let summary = data.extract
       let wikiObj = ""
       var sent = "From other capitalisation: This is a redirect from a title with another method of capitalisation."
-      if(summary.length < 1 || summary.includes(sent)){
-          wikiObj = {wiki: "Click logo for additional information", url: url }
+      if(!summary || summary.includes(sent)){
+          wikiObj = {wiki: "Click logo for additional information or choose another search term", url: url }
       } else {
         wikiObj = {wiki: summary, url: url }
       }
@@ -40,7 +40,7 @@ export function getYoutubeVideos(searchTerm){
     return sentenceArray.map( word => word[0].toUpperCase() + word.slice(1, word.length)).join(" ")
     }
   }
-  
+
   //input search term returns array of photos
   export function getFlickrPhotos(searchTerm){
     const API_KEY = '6fa28d45fbf10f69eb12d77eaa1121ae'

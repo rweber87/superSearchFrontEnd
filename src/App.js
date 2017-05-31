@@ -18,14 +18,14 @@ class App extends Component {
       title: '',
       toggleBoolean: false
      }
+     this.shiftViewPort = this.shiftViewPort.bind(this)
   }
 
   handleAddTitle(event){
     event.preventDefault()
     let title = event.target.title.value
     this.setState({
-      title: title,
-      toggleBoolean: true
+      title: title
     })
   }
 
@@ -35,22 +35,30 @@ class App extends Component {
     this.setState({
       toggleBoolean: value
     })
+    this.shiftViewPort()
+  }
+
+  shiftViewPort() {
+    if(!this.state.toggleBoolean){
+      document.body.style.transform ="translateX(0px)"
+    } else {
+      document.body.style.transform ="translateX(170px)"
+    }
   }
 
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <div>
           <SearchForm onSubmit={this.handleAddTitle.bind(this)} note={this.toggleNotes.bind(this)}/>
         </div>
-          <div className="row">
+          <div className="row content">
             <div className="col-md-6">
               <PhotoLister searchTerm={this.state.title} />
               <VideoLister searchTerm={this.state.title} />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-5">
               <WikiLister title={this.state.title}  />
             </div>
           </div>
