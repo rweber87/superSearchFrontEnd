@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 /* Note Lister Styling*/
 .noteList-container{
-  height:1000px;
+  height:1239px;
   width:400px;
   position: absolute;
   right: 0;
@@ -39,7 +39,7 @@ i#note-icon .glyphicon{
 .notes-container{
   margin-left:13px;
   padding-top:20px;
-  height:570px;
+  height:1000px;
   position: relative;
   list-style-type: none;
   overflow-y: scroll;
