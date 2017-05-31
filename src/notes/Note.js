@@ -22,7 +22,7 @@ class Note extends React.Component {
 			editMode: !this.state.editMode
 		})
 		const newInput= event.target.duncandevs.value
-		this.props.onEdit(this.state.note.id, newInput)
+		this.props.onEdit(this.props.note.id, newInput)
 	}
 
 
@@ -37,7 +37,7 @@ class Note extends React.Component {
 					</div>
 					<div className="form-buttons">
 						<button className="glyphicon glyphicon-pencil"onClick={this.toggleEdit.bind(this)}></button>
-						<button className="glyphicon glyphicon-remove" onClick={() => this.props.onDelete(this.state.note.id)}></button>
+						<button className="glyphicon glyphicon-remove" onClick={() => this.props.onDelete(this.props.note.id)}></button>
 					</div>
 				</div>
 			)

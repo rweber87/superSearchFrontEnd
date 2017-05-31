@@ -33,7 +33,11 @@ export function getYoutubeVideos(searchTerm){
     sentenceArray[sentenceArray.length - 1] = lastWord
     return sentenceArray.map( word => word[0].toUpperCase() + word.slice(1, word.length)).join(" ")
     }
+  }
 
+  function validateSummary(summary){
+    let sent = "From other capitalisation: This is a redirect from a title with another method of capitalisation."
+    summary.includes(sent) || summary.length === 0 ? true: false
   }
 
   //input search term returns array of photos

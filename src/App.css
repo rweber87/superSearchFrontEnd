@@ -32,6 +32,10 @@
   border-color: #ff0000;
 }
 
+i#note-icon .glyphicon{
+  top: -6px;
+}
+
 .notes-container{
   margin-left:13px;
   padding-top:20px;
@@ -119,19 +123,17 @@
   overflow-x: scroll;
   /* Prevent vertical gaps */
   line-height: 0;
-  -webkit-column-count: 3;
+  -webkit-column-count: 1;
   -webkit-column-gap:   0px;
-  -moz-column-count:    3;
+  -moz-column-count:    1;
   -moz-column-gap:      0px;
-  column-count:         3;
+  column-count:         1;
   column-gap:           0px;
   border-style: solid;
 }
 .video {
-  margin:10px;
+  margin:20px;
   float:left;
-  width: 100% !important;
-  height: auto !important;
 }
 /*CSS styling*/
 

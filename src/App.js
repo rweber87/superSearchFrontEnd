@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+
 import SearchForm from './searchForm'
-import NavBar from './NavBar'
 import NoteLister from './notes/NoteLister'
 import PhotoLister from './photos/PhotoLister'
 import VideoLister from './videos/VideoLister'
@@ -24,11 +24,11 @@ class App extends Component {
     event.preventDefault()
     let title = event.target.title.value
     this.setState({
-      title: title
+      title: title,
     })
   }
 
-  toggleNavbar(event){
+  toggleNotes(event){
     event.preventDefault()
     const value = this.state.toggleBoolean ? false : true
     this.setState({
@@ -41,8 +41,9 @@ class App extends Component {
     console.log(this.state)
     return (
       <div className="App">
-        <NavBar toggle={this.toggleNavbar.bind(this)} />
-        <SearchForm onSubmit={this.handleAddTitle.bind(this)}/>
+        <div>
+          <SearchForm onSubmit={this.handleAddTitle.bind(this)} note={this.toggleNotes.bind(this)}/>
+        </div>
           <div className="row">
             <div className="col-md-6">
               <PhotoLister searchTerm={this.state.title} />
