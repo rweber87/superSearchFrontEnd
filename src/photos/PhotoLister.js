@@ -22,8 +22,12 @@ export default class PhotoLister extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.fetchFlickrPhotos(nextProps.searchTerm)
+    if(nextProps.searchTerm.length > 0){
+      this.fetchFlickrPhotos(nextProps.searchTerm)
+    }
   }
+
+
 
   fetchFlickrPhotos(searchTerm){
     getFlickrPhotos(searchTerm).then(response => {
