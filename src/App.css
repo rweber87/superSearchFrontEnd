@@ -25,6 +25,13 @@
 /*  background-color:#34495e;
 */}
 
+.wikipedia-logo {
+  width:200px;
+  height:210px;
+  border-style: solid;
+  border-color: #ff0000;
+}
+
 .notes-container{
   margin-left:20px;
   padding-top:20px;
@@ -73,9 +80,14 @@
   box-shadow: 2px 2px 2px 0px #888888;
 }
 /*Photo Styling*/
+.wikipedia {
+  height:1175px;
+  overflow: scroll;
+}
+
 .photoPlane{
   height:620px;
-  width:900px;
+  width:auto;
   overflow-x: scroll;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -97,7 +109,7 @@
 /*Video Styling*/
 .videoPlane{
   height:620px;
-  width:900px;
+  width:auto;
   overflow-y: hidden;
   overflow-x: scroll;
   /* Prevent vertical gaps */
